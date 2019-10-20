@@ -1,3 +1,6 @@
+const { generate } = require('multiple-cucumber-html-reporter');
+const { removeSync } = require('fs-extra');
+
 const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 60000;
 
 exports.config = {
@@ -124,7 +127,13 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     //
-    reporters: ['spec'],
+    reporters: [
+        'spec', 
+        ['cucumberjs-json', {
+            jsonFolder: './reports/cucumber-json/',
+            language: 'en'
+        }]
+    ],
 
     services: ['selenium-standalone'],
     //services: ['selenium-standalone', 'phantomjs', 'appium'],
@@ -167,6 +176,10 @@ exports.config = {
     //
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
+    onPrepare: function() {
+      removeSync('./reports/cucumber-json');  
+    },
+    
     before: function() {
       /**
        * Setup the Chai assertion framework
@@ -204,4 +217,11 @@ exports.config = {
     // afterScenario: function (scenarioResult) {
     //     //do your stuff
     // },
+    
+    onComplete: function() {
+        generate({
+            jsonDir: './reports/cucumber-json/',
+            reportPath: './reports/html'
+        })
+    }
 };
