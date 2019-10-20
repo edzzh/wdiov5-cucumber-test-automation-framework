@@ -16,7 +16,6 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/register": "^7.6.2",
     "@wdio/cli": "^5.15.1",
     "@wdio/cucumber-framework": "^5.15.1",
@@ -27,7 +26,17 @@
   },
   "babel": {
     "presets": [
-      [ "@babel/preset-env", { "targets": {"node": "current"} } ]
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ]
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
   }
 }
