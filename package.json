@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/wdio run ./wdio.conf.js",
-    "selenium-install": "node_modules/.bin/selenium-standalone install",
-    "selenium-start": "node_modules/.bin/selenium-standalone start",
-    "selenium-setup": "npm run selenium-install && npm run selenium-start"
+    "selenium:install": "node_modules/.bin/selenium-standalone install",
+    "selenium:start": "node_modules/.bin/selenium-standalone start",
+    "selenium": "npm run selenium:install && npm run selenium:start"
   },
   "keywords": [],
   "author": "Edgars Hartmanis",
   "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
@@ -38,8 +41,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "chai": "^4.2.0"
   }
 }
