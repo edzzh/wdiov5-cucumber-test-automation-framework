@@ -124,6 +124,19 @@ exports.config = {
     ],
 
     services: ['selenium-standalone'],
+    seleniumLogs: 'logs',
+    seleniumInstallArgs: {
+      drivers: {
+        chrome: { version: '77.0.3865.40' },
+        firefox: { version: '0.26.0' },
+      }
+    },
+    seleniumArgs: {
+      drivers: {
+        chrome: { version: '77.0.3865.40' },
+        firefox: { version: '0.26.0' },
+      }
+    },
 
     framework: 'cucumber',
 
