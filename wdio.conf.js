@@ -65,17 +65,6 @@ exports.config = {
           // },
 
           // {
-          //     browserName: 'phantomjs',
-          //     platform: '',
-          //     version: '',
-          //     maxInstances: '5',
-          //
-          //     //  specs: [
-          //     //    './test/specs/*.js'
-          //     //  ],
-          // },
-          //
-          // {
           //     browserName: 'chrome',
           //     chromeOptions: {
           //       // run in headless mode
@@ -118,7 +107,6 @@ exports.config = {
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
     //baseUrl: 'http://localhost:8080',
-    baseUrl: '',
     waitforTimeout: 60000,            // Default timeout for all waitFor* commands.
     connectionRetryTimeout: 90000,    // Default timeout in milliseconds for request  if Selenium Grid doesn't send response
     connectionRetryCount: 3,          // Default request retries count
@@ -136,8 +124,7 @@ exports.config = {
     ],
 
     services: ['selenium-standalone'],
-    //services: ['selenium-standalone', 'phantomjs', 'appium'],
-    
+
     framework: 'cucumber',
 
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -145,7 +132,6 @@ exports.config = {
         requireModule: ['@babel/register'],
         require: ['./step_definitions/*.js'],   // <string[]> (file/dir) require files before executing features
         backtrace: true,    // <boolean> show full backtrace for errors
-        //compiler: ['js:babel-core/register'], // <string[]> filetype:compiler used for processing required features
         compiler: [], // <string[]> filetype:compiler used for processing required features
         failAmbiguousDefinitions: true,       // <boolean< Treat ambiguous definitions as errors
         dryRun: false,      // <boolean> invoke formatters without executing steps
@@ -155,7 +141,6 @@ exports.config = {
         snippets: true,     // <boolean> hide step definition snippets for pending steps
         format: ['pretty'], // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
         colors: true,       // <boolean> disable colors in formatter output
-        snippets: false,    // <boolean> hide step definition snippets for pending steps
         source: false,      // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: true,       // <boolean> fail if there are any undefined or pending steps
