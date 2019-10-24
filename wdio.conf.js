@@ -135,7 +135,7 @@ exports.config = {
         }]
     ],
 
-    services: ['selenium-standalone'],
+    //services: ['selenium-standalone'],
     //services: ['selenium-standalone', 'phantomjs', 'appium'],
     
     framework: 'cucumber',
