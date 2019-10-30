@@ -40,12 +40,12 @@ exports.config = {
               // version: '50.0',
               maxInstances: '1',
         },  
-        {
-               browserName: 'firefox',
+        //{
+               //browserName: 'firefox',
                // platform: 'Windows 10',
                // version: '50.0',
-               maxInstances: '1',
-        },
+               //maxInstances: '1',
+        //},
           // {
           //     browserName: 'safari',
           //     // platform: 'Windows 10',
@@ -127,19 +127,19 @@ exports.config = {
     ],
 
     services: ['selenium-standalone'],
-    seleniumLogs: 'logs',
-    seleniumInstallArgs: {
-      drivers: {
-        chrome: { version: '77.0.3865.40' },
-        firefox: { version: '0.26.0' },
-      }
-    },
-    seleniumArgs: {
-      drivers: {
-        chrome: { version: '77.0.3865.40' },
-        firefox: { version: '0.26.0' },
-      }
-    },
+//     seleniumLogs: 'logs',
+//     seleniumInstallArgs: {
+//       drivers: {
+//         chrome: { version: '77.0.3865.40' },
+//         firefox: { version: '0.26.0' },
+//       }
+//     },
+//     seleniumArgs: {
+//       drivers: {
+//         chrome: { version: '77.0.3865.40' },
+//         firefox: { version: '0.26.0' },
+//       }
+//     },
 
     framework: 'cucumber',
 
