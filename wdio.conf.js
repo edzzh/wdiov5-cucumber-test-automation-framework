@@ -4,7 +4,9 @@ const { removeSync } = require('fs-extra');
 const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 60000;
 
 exports.config = {
-    host: 'localhost',
+    runner: 'local',
+
+    // host: 'localhost',
     port: 4444,
     path: '/wd/hub',
 
@@ -33,67 +35,10 @@ exports.config = {
     //
     maxInstances: 10,
 
-    capabilities: [
-        {
-              browserName: 'chrome',
-              // platform: 'Windows 10',
-              // version: '50.0',
-              maxInstances: '1',
-        },  
-        //{
-               //browserName: 'firefox',
-               // platform: 'Windows 10',
-               // version: '50.0',
-               //maxInstances: '1',
-        //},
-          // {
-          //     browserName: 'safari',
-          //     // platform: 'Windows 10',
-          //     // version: '50.0',
-          //     maxInstances: '5',
-          // },
-          //
-          // {
-          //     browserName: 'internet explorer',
-          //     platform: '',
-          //     version: '',
-          //     acceptUntrustedCertificates: true,
-          //     ignoreProtectedModeSettings: true,    //only applicable to IE browser
-          //     ignoreZoomSetting: true,              //only applicable to IE browser
-          //     ensureCleanSession: true,
-          //     maxInstances: '5',
-          //     // specs: [
-          //     //     './test/specs/*.js'
-          //     // ],
-          // },
+    capabilities: [{ browserName: 'chrome', maxInstances: 1 }],
 
-          // {
-          //     browserName: 'chrome',
-          //     chromeOptions: {
-          //       // run in headless mode
-          //       args: ['--headless'],
-          //       //binary:   '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
-          //       binary:   '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'  //for OS X
-          //       //binary:   '/Program Files (x86)/Google/Chrome/Application/chrome.exe'     //for windows7
-          //     },
-          //     platform: '',
-          //     version: '',
-          //     maxInstances: '5',
-          //     // specs: [
-          //     //     './test/specs/*.js'
-          //     // ],
-          // },
-          //
-          // {
-          //     browserName: 'firefox',
-          //     // platform: 'Windows 10',
-          //     // version: '50.0',
-          //     maxInstances: '5',
-          //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-          //     "moz:firefoxOptions": { args: ['-headless'] }
-          // },
-    ],
-
+    // chromeDriverArgs: ['--port=9515', '--url-base=\'/\''], // default for ChromeDriver
+    // chromeDriverLogs: './',
     // ===================
     // Test Configurations
     // ===================
@@ -109,7 +54,7 @@ exports.config = {
     
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    //baseUrl: 'http://localhost:8080',
+    baseUrl: '/',
     waitforTimeout: 60000,            // Default timeout for all waitFor* commands.
     connectionRetryTimeout: 90000,    // Default timeout in milliseconds for request  if Selenium Grid doesn't send response
     connectionRetryCount: 3,          // Default request retries count

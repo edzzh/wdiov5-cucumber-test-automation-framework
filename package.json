@@ -28,6 +28,7 @@
     "@wdio/sync": "^5.15.1",
     "fs-extra": "^8.1.0",
     "multiple-cucumber-html-reporter": "^1.13.1",
+    "wdio-chromedriver-service": "^5.0.2",
     "wdio-cucumberjs-json-reporter": "^1.1.1"
   },
   "babel": {
