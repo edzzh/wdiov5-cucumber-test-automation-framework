@@ -4,6 +4,9 @@ const { removeSync } = require('fs-extra');
 const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 60000;
 
 exports.config = {
+    host: 'localhost',
+    port: 4444,
+    path: '/wd/hub'
 
     specs: [
         './features/*.feature',
